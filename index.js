@@ -1,13 +1,15 @@
+/* capire in quale oggetto di request è contenuto il json che vi arriva dal browser
+quale metodo di JSON utlilizzare per fare: let oggettojs=JSON.?(oggetto punto 1) */
 const express=require("express");
 const app=express();
-app.use(express.json()) // for parsing application/json
-// app.post('/utente/:nome/:cognome',(request,response)=>{
-//   let user={firstName:request.params.nome,lastName:request.params.cognome}
-​
-// })
+app.use(express.json())
 app.post('/utente',(request,response)=>{
-  console.log(request)
- // fare il parsing del json e "tradurlo"in oggetto js
-// e poi fare il contrario per metterlo nella risposts
+    //stampo obj json
+    let oggetto = request.body
+    console.log(oggetto)
+    //obj json to stringa
+    let str = JSON.stringify(oggetto)
+    console.log(str)
 })
+
 app.listen(8080,()=>{console.log("Express is working...")})
