@@ -10,6 +10,7 @@ app.post('/utente',(request,response)=>{
     //obj json to stringa
     let str = JSON.stringify(oggetto)
     console.log(str)
+    //str to obj json: JSON.parse
 })
 
 app.listen(8080,()=>{console.log("Express is working...")})
